@@ -12,13 +12,16 @@ from tensorflow import keras
 from tensorflow.keras import datasets
 
 #加载MNIST数据集
-#x:[60k,28,28] y:[60k,]
-(x,y),_ = datasets.mnist.load_data()
+#x:[60k,28,28] [10k,28,28] y:[60k,] [10k]
+(x,y),(x_test,y_test) = datasets.mnist.load_data()
 
 #转换为Tensor
 #x:[0-255]=>[0-1.]
 x = tf.convert_to_tensor(x,dtype=tf.float32) /255
 y = tf.convert_to_tensor(y,dtype=tf.int32)
+
+x_test = tf.convert_to_tensor(x_test,dtype=tf.float32) /255
+y_test = tf.convert_to_tensor(y_test,dtype=tf.int32)
 
 print(x.shape,x.dtype,y.shape,y.dtype)
 print(tf.reduce_min(x),tf.reduce_max(x),tf.reduce_min(y),tf.reduce_max(y))
@@ -27,6 +30,7 @@ print(tf.reduce_min(x),tf.reduce_max(x),tf.reduce_min(y),tf.reduce_max(y))
 #将x_train和y_train from_tensor_slices函数切分传入的 Tensor 的第一个维度，生成相应的 dataset
 #关联x_train和y_train关联后为Dataset，无法正常输出【可以理解为很多块batch】
 train_db = tf.data.Dataset.from_tensor_slices((x,y)).batch(128)
+test_db = tf.data.Dataset.from_tensor_slices((x_test,y_test)).batch(100)
 #通过迭代器输出
 train_iter = iter(train_db)
 sample = next(train_iter)
@@ -48,7 +52,7 @@ b3 = tf.Variable(tf.zeros([10]))
 
 lr = 1e-3
 #迭代次数
-epoch = 10
+epoch = 100
 for epoch in range(epoch):
     for step,(x,y) in enumerate(train_db): #对于每个batch
     #x:[128,28,28] y:[128]
@@ -92,4 +96,30 @@ for epoch in range(epoch):
     #爆炸解决方法1：去修改初始化权值的范围
         if step % 100 == 0:
             print("epoch:",epoch,step,"Loss:",float(loss))
+
+    total_correct,total_num = 0,0
+    #test
+    for step,(x,y) in enumerate(test_db):
+        #[b,28,28] -> [b,28*28]
+        x = tf.reshape(x,[-1,28*28])
+
+        #[b,784]=>[b,256]->[b,128]->[b,10]
+        h1 = tf.nn.relu(x@w1 + b1)
+        h2 = tf.nn.relu(h1@w2 + b2)
+        out = h2@w3 + b3
+
+        #Out:[b,10]
+        prob = tf.nn.softmax(out,axis= 1)
+        pred = tf.argmax(prob,axis= 1)
+        pred = tf.cast(pred,dtype=tf.int32)
+        #查看pred格式
+        #print(pred.dtype,y.dtype)
+        correct = tf.cast(tf.equal(pred,y),dtype=tf.int32)
+        correct = tf.reduce_sum(correct)
+
+        total_correct += int(correct)
+        total_num +=x.shape[0]
+    acc = total_correct/total_num
+    print('test_acc:',acc)
+
 

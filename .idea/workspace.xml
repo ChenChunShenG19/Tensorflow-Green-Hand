@@ -3,6 +3,21 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2d314b8d-2dac-4685-8f23-041e3f155273" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.Forward">
     <configuration name="Forward" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tensorflow从零开始" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,10 +131,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Forward" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.acc_topK" />
         <item itemvalue="Python.Forward_teacher" />
-        <item itemvalue="Python.Forward" />
       </list>
     </recent_temporary>
   </component>
@@ -134,27 +149,50 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="913" height="292" key="GridCell.Tab.0.bottom" timestamp="1598519229098">
+    <state width="913" height="292" key="GridCell.Tab.0.bottom" timestamp="1598605451370">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="913" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1598519229098" />
-    <state width="913" height="292" key="GridCell.Tab.0.center" timestamp="1598519229098">
+    <state width="913" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1598605451370" />
+    <state width="913" height="292" key="GridCell.Tab.0.center" timestamp="1598605451370">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="913" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1598519229098" />
-    <state width="913" height="292" key="GridCell.Tab.0.left" timestamp="1598519229098">
+    <state width="913" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1598605451370" />
+    <state width="913" height="292" key="GridCell.Tab.0.left" timestamp="1598605451370">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="913" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1598519229098" />
-    <state width="913" height="292" key="GridCell.Tab.0.right" timestamp="1598519229098">
+    <state width="913" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1598605451370" />
+    <state width="913" height="292" key="GridCell.Tab.0.right" timestamp="1598605451370">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="913" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1598519229098" />
-    <state x="922" y="102" key="SettingsEditor" timestamp="1598511056435">
+    <state width="913" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1598605451370" />
+    <state x="922" y="102" key="SettingsEditor" timestamp="1598605448433">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="922" y="102" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1598511056435" />
+    <state x="922" y="102" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1598605448433" />
     <state x="1091" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1598519123183">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
